@@ -1166,32 +1166,34 @@ function Picker({
             setItems(state => [...state, item]);
         }
 
-        setValue(state => {
-            if (multiple) {
-                let _state = state !== null ? [...state] : [];
+//         setValue(state => {
+//             if (multiple) {
+//                 let _state = state !== null ? [...state] : [];
 
-                if (_state.includes(item[_schema.value])) {
-                    // Remove the value
-                    if (Number.isInteger(min) && min >= _state.length) {
-                        return state;
-                    }
+//                 if (_state.includes(item[_schema.value])) {
+//                     // Remove the value
+//                     if (Number.isInteger(min) && min >= _state.length) {
+//                         return state;
+//                     }
 
-                    const index = _state.findIndex(x => x === item[_schema.value]);
-                    _state.splice(index, 1);
-                } else {
-                    // Add the value
-                    if (Number.isInteger(max) && max <= _state.length) {
-                        return state;
-                    }
+//                     const index = _state.findIndex(x => x === item[_schema.value]);
+//                     _state.splice(index, 1);
+//                 } else {
+//                     // Add the value
+//                     if (Number.isInteger(max) && max <= _state.length) {
+//                         return state;
+//                     }
 
-                    _state.push(item[_schema.value]);
-                }
+//                     _state.push(item[_schema.value]);
+//                 }
 
-                return _state;
-            } else {
-                return item[_schema.value];
-            }
-        });
+//                 return _state;
+//             } else {
+//                 return item[_schema.value];
+//             }
+//         });
+        
+        setValue(item)
 
         setNecessaryItems(state => {
             if (multiple) {
